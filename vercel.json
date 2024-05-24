@@ -1,10 +1,8 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "server/*.js",
-        "use": "@vercel/node"
-      }
-    ]
-  }
-  
+  "name": "studysphere",
+  "version": 2,
+  "builds": [
+    { "src": "client/package.json", "use": "@vercel/static-build" },
+    { "src": "server/index.js", "use": "@vercel/node" }
+  ]
+}
