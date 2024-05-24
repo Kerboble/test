@@ -4,9 +4,9 @@
   "description": "All in one LMS application to mimic an in-person classroom as close as possible.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"cd client && npm run dev\" \"cd server && npm run dev\"",
-    "build": "cd client && npm run build"
+    "install": "cd client && npm install && cd .. && cd server && npm install",
+    "build": "cd client && npm run build && cd .. && cd server && npm run build",
+    "start": "node server/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +14,7 @@
     "@mui/material": "^5.15.15",
     "@nivo/bar": "^0.85.1",
     "concurrently": "^8.2.2",
-    "recharts": "^2.12.5"
+    "recharts": "^2.12.5",
+    "vite": "^5.2.0"
   }
 }
