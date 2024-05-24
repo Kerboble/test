@@ -1,0 +1,2459 @@
+$body-background-color-start: #023E8A;
+$body-background-color-1: #0077B6;
+$body-background-color-2: #0096C7;
+$body-background-color-3: #00B4D8;
+$body-background-color-4: #48CAE4;
+$body-background-color-5: #90E0EF;
+$body-background-color-6: #ADE8F4;
+$body-background-color-end: #CAF0F8;
+
+@mixin mobile {
+  @media screen and (max-width: 480px){
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 1095px){
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width: 1200px){
+    @content
+  }
+}
+
+@keyframes bounce2 {
+  from {
+    transform: translateY(5);
+  }
+  to {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+img{
+  object-fit: cover;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+.formWrapper form {
+  transition: height 0.5s, opacity 0.5s;
+}
+
+.formWrapper form.shrink {
+  height: 0;
+  opacity: 0;
+  padding: 0;
+}
+
+.formWrapper form.visible {
+  height: auto;
+  opacity: 1;
+}
+
+
+p {
+  margin-top: 5px;
+}
+
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+body {
+  scrollbar-width: none;  /* For Firefox */
+}
+
+
+body {
+padding: 0;
+margin: 0;
+}
+
+.register-logo{
+  height: 10vh;
+}
+
+.username-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .thumbs-up, .thumbs-down{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 280px;
+    top: -11.7px;
+  }
+
+  .thumbs-down {
+    top: 5px;
+  }
+}
+
+.loading-login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  h1{
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.register-container, .login-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  overflow: scroll;
+
+  .login-button{
+    margin-right: 20px;
+  }
+
+  .centeredContentLeft{
+    // transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #023E8A;
+    font-size: 8.5em;
+    font-weight: bold;
+    text-align: center;
+    height: 100vh;
+    color: #ADE8F4;
+    flex: 1;
+    margin: 0;
+    padding-top: 100px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;    
+    border-radius: 0px 0px 20px 20px;
+
+
+
+    .big-sphere {
+      height: 5vh;
+      margin-left: 20px;
+      animation: 
+    bounce2 800ms
+          alternate infinite
+          cubic-bezier(.5, .5, .5, 0.5);
+    }
+
+}
+
+  @include tablet {
+    overflow: scroll;
+
+    .centeredContentLeft {
+      display: flex;
+      justify-content: center;
+      border-radius: 0px 0px 20px 20px;
+      margin-bottom: 20px;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;     
+      flex: 1;
+      flex-direction: row;
+      
+      .big-sphere {
+        height: 3rem;
+        animation: 
+      bounce2 800ms
+            alternate infinite
+            cubic-bezier(.5, .5, .5, 0.5);
+
+      }
+      
+      .app-title {
+        font-size: 10vh;
+        font-size: 10vw;
+        padding: 10px;
+      }
+    }
+
+    .formContainer {
+      flex: 3;
+      width: 100%;
+
+    }
+  }
+
+  @include mobile{
+    .centeredContentLeft{
+      display: none;
+    }
+  }
+
+  input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: $body-background-color-end !important;
+    color: $body-background-color-start;
+    &:focus {
+      outline: none;
+    } 
+    &::placeholder{
+      color: #023E8A;
+    }
+  }
+}
+
+
+.formContainer {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $body-background-color-5;
+    margin-top: 10px;
+    padding: 0;
+
+    button {
+      background-color: $body-background-color-start;
+      color: $body-background-color-5;
+      padding: 15px;
+      font-weight: bold;
+      border: none;
+      border-radius: 90px;
+      cursor: pointer;
+      min-width: 250px;
+    }
+  }  
+  .formWrapper {
+    // padding: 20px 90px;
+    // margin-right: 100px;
+    // border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  
+    .form-message {
+      color: $body-background-color-start;
+      font-weight: bold;
+      font-size: 45px;
+      margin-right: 20px
+    };
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap:30px;
+
+      p{
+        margin-left: 65px;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        text-wrap: nowrap;
+        color: #023E8A;
+        font-family: bold;
+      }
+
+  
+      .inputWrapper {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        gap: 10px;
+        padding-right: 20px;
+
+        
+      };
+
+      .avatar-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        position: relative;
+        width: 100%;
+
+        .selected-avatar-image {
+          border-radius: 50%;
+        }
+
+        .avatar-logo{
+          cursor: pointer;
+          margin-right: 50px;
+        };
+      }
+
+
+      .avatar-input {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+      
+        span {
+          margin-right: 55%; 
+          font-size: 20px;
+          color: $body-background-color-start;
+          font-weight: bold;
+        }
+      }
+      
+    }
+  
+    p {
+      color: $body-background-color-start;
+      font-size: 15px;
+      margin-top: 10px;
+  
+      button {
+        background-color: transparent;
+        color: $body-background-color-start;
+        padding: 10px;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+  
+
+/* Home container */
+.home-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  overflow: hidden;
+
+  .home-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: scroll; /* Use auto to show scrollbar only when necessary */
+    height: auto; /* Allow container to grow as content increases */
+  }
+}
+
+.home {
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden; /* Use auto to show scrollbar only when necessary */
+}
+
+/* Top navbar */
+.top-navbar {
+  width: 100%;
+  max-height: 10vh;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;  
+  justify-content: space-between;
+
+  input {
+    margin: 20px;
+    width: 20vw;
+    border: none;
+    background-color: #f0f2f3;
+    border-radius: 10px;
+    height: 35px;
+    text-align: center;
+  }
+
+  .nav-user-info {
+    display: flex;
+    background-color: #f0f2f3;
+    padding: 10px 15px;
+    border-radius: 40px;
+    gap: 5px;
+    align-items: center;
+    height: 50px;
+    margin: 1vh;
+
+  .profile-photo {
+  height: 35px; /* Adjust height as needed */
+  width: 35px; /* Adjust width as needed */
+  border-radius: 50%;
+  }
+
+  .notification-icon {
+    height: 25px;
+    width: 25px;
+  }
+
+
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    
+    p{
+      padding: 0;
+      margin: 0;
+      font-size: 0.8em;
+    }
+  }
+}
+
+
+
+.logo,
+.profile-photo,
+.notification-icon {
+  height: 40px; /* Adjust height as needed */
+  width: 40px; /* Adjust width as needed */
+  border-radius: 50%;
+}
+
+.side-navbar {
+  height: 100vh;
+  width: 200px;
+  background-image: linear-gradient(to top, #023e8a, #004c96, #005aa2, #0069ac, #0077b6);  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+
+  .company {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+  }
+
+    img{
+      height: 25px;
+      width: 25px;
+      margin-right: 10px;
+    }
+
+
+}
+
+.logout-btn {
+  color:#004c96;
+  padding: 10px;
+  margin-bottom: 20px; 
+  font-weight: bold;
+  border-radius: 9px;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.555);
+  position: absolute;
+  bottom: 40px;
+  width: 7rem;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  
+  img {
+    height: 1.3rem;
+    width: 1.3rem;
+  }
+}
+
+
+//admin dashboard 
+
+.admin-dashboard-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+
+  button{
+    margin: 0.5rem;
+    font-weight: bold;
+  }
+}
+
+
+.admin-dashboard-body .top-portion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+  gap: 0.5rem; /* Adjust the gap between items */
+}
+
+.admin-dashboard-body .statistics {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 20px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;  
+  padding: 20px;
+  text-wrap: wrap;
+}
+
+.admin-dashboard-body .stats-picture img {
+  max-width: 100%;
+}
+
+.admin-dashboard-body .statistics .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-dashboard-body .statistics img {
+  height: 40px;
+  width: 40px;
+}
+
+.admin-dashboard-body .statistics p {
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+//admin students component 
+.student-container{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: auto;
+  padding: 30px;
+  overflow: scroll;
+  
+  input {
+    height: 35px;
+    border: none;
+    width: 200px;
+    background-color: #dfdfdf;
+    border-radius: 9px;
+    text-align: center;
+  }
+
+  button {
+    height: 35px;
+    font-weight: bold;
+  }
+}
+
+.students-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.student {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; /* Center the items vertically */
+  text-align: center;
+  
+  strong, p{
+    margin-top: 5px;
+    padding-right: 20px;
+    margin-left:5px;
+  }
+  
+  .student-img{
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+  }
+  
+
+  .student-info{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
+
+//modal styling
+
+/* Modal Container */
+.modal-container {
+  display: flex;
+  justify-content: center; /* Center the modal horizontally */
+  align-items: center; /* Center the modal vertically */
+  height: 100vh; /* Take the full height of the viewport */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;  
+  max-width: 500px; /* Set the maximum width of the modal */
+  width: 100%; /* Make the modal responsive */
+  gap:20px;
+}
+
+/* Modal Header */
+.modal-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 20px;
+}
+
+/* Modal Title */
+.modal-title {
+  font-size: 1.25rem;
+}
+
+/* Modal Body */
+.modal-body {
+  padding-bottom: 20px;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding-top: 20px;
+  border-top: 1px solid #dee2e6;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Close Button */
+.close-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #6c757d;
+}
+
+.close-button:hover {
+  color: #343a40;
+}
+
+/* Primary Button */
+.primary-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.primary-button:hover {
+  background-color: #0056b3;
+}
+
+/* Secondary Button */
+.secondary-button {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.secondary-button:hover {
+  background-color: #495057;
+}
+
+
+//admin cohort css
+
+.cohort {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center; 
+
+  p {
+
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+  }
+}
+
+
+//cohort files
+.files-header {
+  display: flex;
+  justify-content: space-between; /* Aligns items with space between them */
+  padding: 20px;
+}
+
+.files-header h1 {
+  margin: 0;
+}
+
+.files-header button {
+  align-self: center; /* Aligns button vertically in the center */
+}
+
+
+
+.files-container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  overflow: scroll;
+
+
+  .files-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+
+
+  .users {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
+    padding: 2rem;
+    height: auto;
+  
+    h3 {
+      display: inline;
+      margin: 0; /* Remove default margin */
+      padding: 0; /* Remove default padding */
+      text-align: center;
+
+      .done-button{
+        flex-direction: column;
+      }
+  
+    }
+
+    .students {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 0.5rem;
+      overflow: scroll;
+      height: 50vh; // Set the height of the .students div
+      padding-bottom: 1rem; // Add some padding to the bottom to make space for scrollbar
+      width: 50%;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+      padding: 20px;
+
+      .cohort-students {
+        height: auto;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;        
+        padding: 1vh;
+        margin: 0;
+        gap: 2px;
+
+        img{
+          border-radius: 50%;
+          width: 5vh;
+        }
+
+        button{
+          width: 10vh;
+          padding: 1vh;
+        }
+      }
+
+
+    
+      
+    }
+
+    .teacher{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 2;
+      height: 50vh;
+      width: auto;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;      
+      border-radius: 5px;
+      
+      .instructor-photo{
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+      }
+
+    }
+  }
+
+  
+
+  .files {
+    display: flex;
+    flex-direction: column;
+    height: 15vh;
+    width: 15vw;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;    
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 0 2px 2px #004c96;
+    }
+  }
+
+  img {
+    height: 5vh;
+    width: auto;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .student {
+    display: flex;
+    flex-direction: row;
+    height: 4rem; // Set the height of each student element
+    width: auto;
+    align-items: center;
+    padding: 1.8rem;
+  }  
+}
+
+
+
+//student profile
+
+.student-profile-container, .teacher-profile-container {
+  height: auto;
+  width: 100%;
+  padding: 45px 5px 45px 45px;
+  display: flex;
+  gap: 40px;
+
+  .student-information, .teacher-information {
+    height: auto;
+    width: auto;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    
+
+    .top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20PX;
+    }
+
+    .cohorts, .bottom {
+      display: flex;
+      flex-direction: column;
+      justify-self: flex-start;
+      width: 100%;
+      margin-top: 10px;
+
+      p{
+        text-wrap: wrap;
+      }
+
+    }
+
+    img{
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    p{
+      text-wrap: nowrap;
+      padding: 0;
+      margin: 0;
+      color: grey;
+    }
+
+    .add-to-cohort {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      height: 100%;
+      align-items: flex-end; 
+    
+      button {
+        height: 50px;
+        font-size: 0.9em;
+        padding: 5px;
+        min-width: 55px;
+      }
+    }
+    
+
+  }
+
+  .academic-stats {
+    height: 80vh;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;    
+    border-radius: 5px;
+    margin-right: 20px;
+    overflow-y: auto;
+    overflow-x:hidden;
+
+    h1{
+      text-align: center;
+    }
+  }
+}
+
+
+//teacher profile 
+
+.display-cohorts {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1em;
+  margin-left: 20px;
+  text-align: center;
+  justify-content: flex-start;
+  gap: 1vh;
+
+
+  .my-cohort {
+    height: auto;
+    width: 30vh;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;    
+    border-radius: 5px;
+    padding: 1em;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-wrap: wrap;
+    
+
+    img {
+      height: 15vh;
+      width: 100%;
+      align-self: center;
+      object-fit: contain;
+    }
+  }
+}
+
+//discussion board
+.discussion-container{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 4rem;
+  height: 100vh;
+  padding: 1rem;
+
+  .discussion-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    height: 100vh;
+    width: 100%;
+    
+  }
+
+  .post-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 3;
+    overflow: scroll;
+    padding: 20px;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    height: 60vh;
+    margin-bottom: 50px;
+
+    .no-posts {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+      gap: 30px;
+    }
+
+    .empty-image {
+      height: 20vh;
+      width: 20vw;
+      object-fit: contain;
+    }
+    
+  }
+
+  .post-wrapper::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+  }
+
+  .posts{
+    display: flex;
+    padding: 2rem;
+    height: auto;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;    
+    border-radius: 10px;
+    padding: 50px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+    text-wrap: pretty;
+    &:hover {
+      background-color: rgb(252, 252, 252);
+     .post-type {
+      background-color: #004c96;
+      p{
+        color: white;
+      }
+     }
+    }
+
+
+    .user-photos{
+      display: flex;
+      
+
+      img{
+        height: 40px;
+        width: 40px;
+        border-radius: 30%;
+        border: solid white 1px;
+        
+      }
+    }
+  }
+
+  .post-preview{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-wrap: wrap;
+    h3 {
+      padding: 0;
+      margin-bottom: 10px;
+      text-wrap: pretty;
+  }
+  
+    p{
+      padding: 0;
+      margin: 0;
+      text-wrap: wrap;
+      color: gray;
+    }
+  }
+
+  .posts-owner {
+    flex: 1;
+    height: auto;
+    width: auto;
+    align-self: center;
+  }
+
+  .owner-photo {
+    border-radius: 50%;
+    height: 2%;
+    width: 2vw;
+  }
+
+  .replies-preview{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    flex: 1;
+    align-items: flex-end;
+
+   .post-type{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    top: -10px;
+    width: 150px;
+    max-height:25px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;    
+    border-radius: 5px;
+    background-color: white;
+    text-wrap: nowrap;
+    gap: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    p{
+      margin: 0;
+      padding: 0;
+      font-size: 0.9em;
+      color: gray;
+      font-weight: 400;
+    }
+
+    img {
+      height: 20px;
+      width: 20px;
+    }
+   }
+
+   button{
+    z-index: 1;
+   }
+  }
+
+  .owner-photo{
+   height: 15vh;
+   width: 15vh;
+   border-radius: 20%;
+  }
+
+  .make-post{
+    flex: 1;
+    text-align: center;
+  }
+
+  .discussion-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+
+    .type {
+      display: flex;
+      align-content: center;
+      padding: 5px;
+      gap: 5px;
+    }
+    P{
+      padding: 0;
+      margin: 0;
+    }
+    
+    img{
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+  }
+
+}
+
+.selected-post-container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  p{
+    font-size: 1vw;
+  }
+
+
+  .selected-post-wrapper {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll; /* Use auto to show scrollbar only when necessary */
+    margin: 0;
+    overflow-x: hidden;
+
+    hr {
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      padding: 0;
+      margin: 0;
+    }
+
+    .text-area {
+      width: 40%;
+    }
+
+    .owner-of-post {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; /* Align content at the top */
+      border-radius: 5px;
+      padding: 20px;
+      height: auto;
+
+      img {
+        height: 20vh;
+        width: 20vh;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.comments-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 2vh;
+  margin-bottom: auto;
+  flex:2;
+  gap: 1vh;
+ 
+
+
+  .comment-wrapper {
+    width: auto;
+    height: auto; /* Adjust height to grow as content increases */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    border-radius: 5px;
+  
+    .comment {
+      display: flex;
+      flex-direction: column;
+      padding: 10px; /* Add padding for spacing between comments */
+
+      .comment-owner-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+      
+        .reply-btn {
+          background-color: transparent;
+          border: none;
+          &:hover {
+            background-color: #004c96;
+            color: white;
+            border-radius: 20px;
+          }
+        }
+      
+        .comment-content {
+          word-wrap: break-word; /* Wrap long words to prevent horizontal overflow */
+          padding-left: 60px;
+          padding-right: 30px;
+          text-align: justify;
+          span {
+            font-weight: bold;
+          }
+
+          .selected-comment {
+            color: #004c96;
+            animation: 
+            bounce2 200ms
+                  alternate 4
+                  cubic-bezier(.5, .5, .5, 0.5);
+        }
+        
+      
+          .more {
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            cursor: pointer;
+            margin-left: 1vh;
+          }
+
+          .more-options{
+            flex-direction: column;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;            
+            justify-content: center;
+            position: absolute;
+            right: 0;
+            background-color: #ffffff;
+            height: auto;
+            z-index: 1;
+            top: 30%;
+
+
+            .more-options-delete, .more-options-edit, .flag-option{
+              height: 50px;
+              width: 150px;
+              align-content: center;
+              text-align: center;
+            }
+
+            .more-options-edit:hover, .more-options-delete:hover{
+              cursor: pointer;
+              background-color: #004c96;
+              color: white;
+              border-radius: 10px 10px 0px 0px ;
+            }
+
+            .more-options-delete:hover{
+              border-radius: 0px 0px 10px 10px 
+            }
+
+            .flag-option:hover{
+              background-color: #004c96;
+              border-radius: 10px;
+              color: white;
+            }
+          }
+        }
+      }
+      
+
+      button {
+        height: 35px;
+        width: 100px;
+      }
+
+      img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    .replies {
+      display: flex;
+      flex-direction: column;
+      margin-left: 30px;
+      padding: 0;
+      width: 100%;
+      gap: 1vh;
+
+
+      .replies-toggle{
+        color: #004c96;
+        width: 20px;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+
+
+    }
+
+    .reply {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: auto;
+
+      .reply-owner-info {
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+        
+        p{
+          margin: 0;
+        }
+      }
+
+    
+
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+//student courses 
+
+.student-courses-container {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: 100%;
+
+  .left-side {
+    height: 100%;
+    max-width: 70%; /* Specify a maximum width */
+    flex: 2; /* Adjust flex property */
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    hr{
+      margin: 0;
+      padding: 0;
+    }
+
+    .courses-filter {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      padding-left: 2vh;
+      padding-right: 2vh;
+      cursor: pointer;
+      overflow-x: auto; /* Allow horizontal scrolling for overflow */
+      white-space: nowrap; /* Prevent wrapping of tags */
+      gap: 1vh;
+      align-content: center;
+      p {
+        height: auto;
+        padding: 1vh;
+        border-radius: 5px;
+        margin-right: 1vh; /* Adjust margin for spacing between tags */
+      }
+
+      .selected-tag {
+        padding: 1vh;
+        color: #004c96;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    .courses {
+      flex: 1; /* Adjust flex property */
+      padding: 2vh;
+      height: auto;
+
+      .my-course {
+        height: auto;
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;        
+        padding: 20px;
+        display: flex;
+        gap: 5vh;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        position: relative;
+
+        .course-description{
+          min-width: 100%;
+          
+        }
+
+        .right {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .course-footers {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+
+
+          .course-tags {
+            display: flex;
+            gap: 1vh;
+            flex-wrap: wrap;
+
+            .tags {
+              height: auto;
+              padding: 1vh;
+              background-color: #b6b5b5;
+              color: white;
+              border-radius: 5px;
+            }
+          }
+
+          button {
+            height: 43px;
+            width: auto;
+            position: absolute;
+            bottom: 35px;
+            right: 10px;
+
+            img {
+              height: 25px;
+              width: auto;
+            }
+          }
+        }
+
+        img {
+          height: 20vh;
+          width: auto;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  .right-side {
+    flex: 1;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    gap: 2vh;
+
+    h1 {
+      text-align: c;
+    }
+
+    .calender {
+      flex: 1;
+      height: auto;
+      width: 100%;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;      
+      border-radius: 20px;
+    }
+
+    .teachers {
+      height: auto;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;      
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      padding: 50px;
+      width: 100%;
+      align-items: center;
+
+      hr {
+        width: 100%;
+        padding: 0;
+        margin: 5px;
+        margin-left: 50px;
+      }
+
+      .instructor {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2vh;
+        justify-content: flex-start;
+        width: 100%;
+
+        img {
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .learning-progress {
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;      
+      border-radius: 20px;
+      width: 100%;
+      height: auto;
+
+      .course-progress {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+
+        strong {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  /* Add these styles to your CSS file */
+.react-calendar {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;  
+  width: 100%;
+  max-width: 300px; /* Adjust the maximum width as needed */
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  border: none;
+}
+
+.react-calendar__tile {
+  padding: 0.5rem;
+}
+
+.react-calendar__tile--now {
+  background-color: #eaf5ff; /* Highlight today's date */
+}
+
+.react-calendar__tile--active {
+  background-color: #b3d9ff; /* Highlight selected date */
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #ccc; /* Dim neighboring month's days */
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  color: #666; /* Weekday labels color */
+}
+
+.react-calendar__navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #f5f5f5; /* Navigation background color */
+  border-bottom: 1px solid #ccc;
+}
+
+.react-calendar__navigation__label {
+  font-weight: bold;
+}
+
+.react-calendar__navigation__arrow {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.react-calendar__navigation__arrow:hover {
+  color: #004c96; /* Hover color for navigation arrows */
+}
+}
+
+.edit-student-container {
+  height: auto;
+  width: 100%;
+  padding: 20px;
+
+  
+
+  .edit-student-wrapper {
+    display: flex;
+    height: auto;
+    padding: 50px;
+    border-radius: 20px;
+    justify-content: center;
+    position: relative;
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .btn-success{
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 35px;
+      width: 75px;
+    }
+
+    
+
+    .add-photo{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      height: 40vh;
+      border-radius: 5px;
+      
+
+      button{
+        margin: 5px;
+      }
+    }
+    
+
+    img{
+      height: 200px;
+      width: 200px;
+      border-radius: 20px;
+    }
+
+    #file{
+      display: none;
+    }
+
+    .transferring{
+      height: 300px;
+      width: auto;
+      align-self: center;
+      justify-self: center;
+    }
+  }
+
+  .input-container{
+    height: auto;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    button{
+      height: 50px;
+      width: 100px;
+      align-self: center;
+      margin-top: 1vh;
+    }
+    
+    #address{
+      height: 20vh;
+      width: 25vw;
+    }
+    
+    input{
+      padding: 10px;
+      width: 25vw;
+    }
+  }
+  
+}
+
+
+.edit-cohort-container {
+  padding: 10px;
+  
+  form{
+    padding: 50px;
+  }
+}
+
+.btn-primary{
+  background-color: #0077b6;
+  border: none
+}
+.btn-secondary{
+  background-color: rgb(100, 100, 100);
+  border: none;
+}
+.btn-danger{
+  border: none;
+}
+
+.student-dashboard-container{
+  height: auto;
+  display: flex;
+  padding: 1vh;
+
+  .student-dashboard-wrapper{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    gap: 2vh;
+
+    
+
+
+    .student-dashboard-wrapper-left{
+      display: flex;
+      flex-direction: column;
+      gap: 2vh;
+      height: 100vh;
+      flex: 2;
+      width: 100%;
+
+      .resume-class{
+        background-color: white;
+        flex: .5;
+        border-radius: 10px;
+        display: flex;
+        padding: 1vh 2vh 1vh 2vh;
+        align-items: center;
+        margin-bottom: 1vh;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;  
+
+        .resume-course-overview{
+          display: flex;
+          gap: 5vh;
+          margin-right: 20vh;
+
+          img{
+            height: 25px;
+            width: 25px;
+            margin-right: 0.5vh;
+          }
+        }
+
+        hr {
+          border-left: 1px solid #000; /* Set border to create the line */
+          height: 50%; /* Set the height to span the entire height of its container */
+          margin-right: 10vh;
+        }
+        
+        .course{
+          flex: 2;
+        }
+
+        .course-photo{
+          flex: 1;
+          img{
+            height: 50px;
+            width: 50px;
+            border-radius: 5px;
+          }
+        }
+
+      }
+
+      .course-statuses{
+        background-color: white;
+        flex: 4;
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;  
+        border-radius: 10px;
+        display: flex;
+        align-content: center;
+        gap: 1vh;
+        flex-wrap: wrap;
+        padding: 2vh;
+
+        strong{
+          width: 100%;
+          font-size: 1.5rem;
+        }
+
+        .lessons, .assignments, .tests{
+          flex: 1;
+          height: 80%;
+          width: 30%;
+          border-radius: 20px;
+          padding: 2vh;
+          display: flex;
+          flex-direction: column;
+          
+
+          img{
+            height: 10vh;
+            width: auto;
+            object-fit: contain;
+          }
+        }
+
+        .lessons{
+          background-color: rgb(176, 176, 216);
+        }
+
+        .assignments{
+          background-color: rgb(227, 166, 165);
+        }
+
+        .tests{
+          background-color: rgb(234, 182, 149);
+        }
+
+      }
+
+      .my-courses {
+        background-color: white;
+        flex: 5;
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;  
+        overflow: scroll;
+        border-radius: 10px;
+        position: relative;
+        padding: 2vh;
+      }
+      strong{
+        font-size: 1.5rem;
+      }
+
+      .header {
+        display: flex;
+        width: 100%;
+        align-content: center;
+        justify-content: space-between;
+
+        .button{
+          
+
+        }
+        .active{
+          background-color: #6298ce;
+          color: #004c96;
+          border: none;
+        }
+      }
+
+      .courses-container{
+        padding: 1vh;
+      }
+    }
+
+    .student-dashboard-wrapper-right{
+      flex:1;
+      height: auto;
+      width: 100%;
+      gap: 2vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .calander{
+      height: 40vh;
+      width: 100%;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;  
+      border-radius: 10px;
+      border: none;
+      background-color: white;
+
+
+      .react-calendar {
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;  
+        width: 100%;
+        max-width: 300px; /* Adjust the maximum width as needed */
+        border-radius: 8px;
+        font-family: Arial, sans-serif;
+        border: none;
+      }
+      
+      .react-calendar__tile {
+        padding: 0.5rem;
+      }
+      
+      .react-calendar__tile--now {
+        background-color: #eaf5ff; /* Highlight today's date */
+      }
+      
+      .react-calendar__tile--active {
+        background-color: #b3d9ff; /* Highlight selected date */
+      }
+      
+      .react-calendar__month-view__days__day--neighboringMonth {
+        color: #ccc; /* Dim neighboring month's days */
+      }
+      
+      .react-calendar__month-view__weekdays__weekday {
+        color: #666; /* Weekday labels color */
+      }
+      
+      .react-calendar__navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem;
+        background-color: #f5f5f5; /* Navigation background color */
+        border-bottom: 1px solid #ccc;
+      }
+      
+      .react-calendar__navigation__label {
+        font-weight: bold;
+      }
+      
+      .react-calendar__navigation__arrow {
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+      
+      .react-calendar__navigation__arrow:hover {
+        color: #004c96; /* Hover color for navigation arrows */
+      }
+    }
+
+    .find-courses{
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 5vh;
+      height: 40vh;
+      width: 100%;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;  
+      border-radius: 10px;
+      justify-content: center;
+
+
+      img{
+        height: 45vh;
+        width: 45vh;
+        align-self: center;
+      }
+    }
+  }
+}
+
+//messaging
+
+.message-container {
+  display: flex;
+  height: auto;
+  width: 100%;
+
+  h3 {
+    color: #0056b3;
+  }
+
+  .left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2vh;
+    gap: 2vh;
+    height: 100vh;
+    overflow: hidden;
+
+    .search-conversation {
+      display: flex;
+      flex: 1;
+      align-items: center;
+
+      input {
+        height: 4vh;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid rgb(194, 190, 190);
+        padding: 1vh;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      img {
+        height: 6vh;
+        width: 6vh;
+      }
+    }
+
+    .contacts {
+      height: auto;
+      overflow: hidden;
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+          color: rgb(90, 88, 88);
+        }
+      }
+
+      .users {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        gap: 1vh;
+        height: auto;
+
+        .contact-photo {
+          height: 6vh;
+          width: 6vh;
+          border-radius: 5px;
+          transition: filter 0.3s ease;
+
+          &:hover{
+            filter: blur(0.5px);
+            border-radius: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+
+    .chats {
+      flex: 5;
+      display: flex;
+      flex-direction: column;
+      gap: 1vh;
+      overflow: scroll;
+      padding: 1vh;
+
+      .chat-item {
+        display: flex;
+        align-items: center;
+
+
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+        &.selected {
+          border: 2px solid #3272b3;
+        }
+
+        .unread-message{
+          display: flex;
+          margin-left: auto;
+
+          p{
+            height: 20px;
+            width: 20px;
+            border-radius: 10px;
+            background-color: #3272b3;
+            color: white;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 14px;
+          }
+
+          img{
+            height: 50px;
+            width: 50px;
+            background-color: gray;
+          }
+        }
+      }
+
+      .participant-photo {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      .chat-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .participant-name {
+        font-weight: bold;
+      }
+
+      .first-message, .last-message {
+        font-size: 0.9em;
+        color: #666;
+      }
+    }
+  }
+
+  .right-side {
+    flex: 2;
+    width: 100%;
+    height: 100vh;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  
+    .chat-container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      position: relative;
+  
+      hr {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+  
+      .chat-header {
+        display: flex;
+        align-items: center;
+        height: 10vh;
+        padding: 1vh;
+        gap: 1vh;
+        width: 100%;
+
+        input{
+          height: 4vh;
+          border-radius: 5px;
+          border: 1px solid gray;
+          padding: 1vh;
+        }
+
+        .receiver-info {
+          display: flex;
+          align-items: center;
+          gap: 1vh;
+          position: relative;
+          width: 100%;
+
+          img{
+            margin-left: auto;
+            &:hover{
+              cursor: pointer;
+            }
+
+          }
+
+          .name-status-container{
+            display: flex;
+            flex-direction: column;
+
+            .name-and-status {
+              display: flex;
+              flex-direction: row;
+              margin: 0;
+              padding: 0;
+              align-items: center;
+
+              p{
+                margin: 0;
+                padding: 0;
+                padding-left: 1vh;
+                color: #b6b8ba;
+              }
+            
+  
+              .status-dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: grey;
+              }
+      
+              .status-dot.online {
+                background-color: #3272b3;
+              
+              }
+      
+              .status-dot.offline {
+                background-color: gray;
+               
+              }
+            }
+
+            h3 {
+              display: flex;
+              align-items: center;
+              gap: 0.5vh;
+              display: flex;
+              padding: 0;
+              margin: 0;
+          }
+
+
+          }
+
+      }
+  
+        img {
+          height: 6vh;
+          width: 6vh;
+          border-radius: 5px;
+        }
+      }
+  
+      .chat-wrapper {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        padding: 1vh;
+        height: 80vh;
+        max-width: 100%;
+        
+        
+      }
+  
+      .message-owner,
+      .received-message {
+        display: flex;
+        gap: 1vh;
+        max-width: 100%; /* Adjust as needed */
+
+        .timestamp {
+          font-size: 12px !important;
+          color: gray !important;
+          margin-top: -10px !important;
+          margin-bottom: 10px !important;
+          background-color: none !important;
+          
+      }
+      }
+  
+      .message-owner {
+        justify-content: flex-end;
+  
+        .content {
+          display: flex;
+          flex-direction: column;
+          max-width: 50%;
+  
+          strong {
+            align-self: flex-end;
+            text-wrap: nowrap;
+          }
+  
+          p {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            padding: 1vh;
+            background-color: #b1d7ff;
+            color: black;
+            border-radius: 5px 0px 5px 5px;
+            max-width: 100%;
+          }
+        }
+  
+        img {
+          height: 5vh;
+          width: 5vh;
+          border-radius: 5px;
+        }
+      }
+  
+      .received-message {
+        justify-content: flex-start;
+  
+        .content {
+          display: flex;
+          flex-direction: column;
+          max-width: 50%;
+  
+          strong {
+            align-self: flex-start;
+            text-wrap: nowrap;
+          }
+  
+          p {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            padding: 1vh;
+            background-color: rgb(232, 232, 232);
+            color: black;
+            border-radius: 2px 5px 5px 5px;
+            max-width: 100%;
+          }
+        }
+  
+        img {
+          height: 5vh;
+          width: 5vh;
+          border-radius: 5px;
+        }
+      }
+  
+      .message-input {
+        width: 100%;
+        padding: 1vh;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        gap: 1vh;
+  
+        input {
+          width: 100%;
+          height: 10vh;
+          padding: 0.5vh;
+          border-radius: 5px;
+          border: 1px solid rgb(194, 190, 190);
+          position: relative;
+          margin-right: 2vh;
+        }
+  
+        button {
+          width: auto;
+          height: 5vh;
+          border: none;
+          border-radius: 5px;
+          background-color: #007bff;
+          position: absolute;
+          color: white;
+          cursor: pointer;
+          right: 5vh;
+        }
+  
+        button:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+  
+  
+  
+  
+}
+
+.chat-item-container {
+  position: relative;
+
+  .participant-photo {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .status-dot {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid white; 
+  }
+  
+  .online {
+    background-color: #3272b3;
+  }
+  
+  .offline {
+    background-color: gray;
+  }
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+
+  .chat-info {
+    margin-left: 10px;
+  }
+  
+  .chat-item.selected {
+    background-color: #f0f0f0;
+  }
+  
+  .participant-name {
+    font-weight: bold;
+  }
+  
+  .last-message {
+    color: #888;
+  }
+}
+
