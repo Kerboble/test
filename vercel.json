@@ -9,7 +9,7 @@
         }
       },
       {
-        "src": "server/*.js",
+        "src": "server/authServer.js",
         "use": "@vercel/node"
       }
     ],
