@@ -13,6 +13,7 @@
     "@mui/material": "^5.15.15",
     "@nivo/bar": "^0.85.1",
     "concurrently": "^8.2.2",
-    "recharts": "^2.12.5"
+    "recharts": "^2.12.5",
+    "vite": "^5.2.0"
   }
 }
