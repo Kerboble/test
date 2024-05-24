@@ -2,15 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "client/package.json",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "client/build"
+        "distDir": "dist"
       }
-    },
-    {
-      "src": "server/authServer.js",
-      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -20,7 +16,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/client/build/index.html"
+      "dest": "/dist/index.html"
     }
   ]
 }
